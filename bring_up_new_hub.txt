@@ -1,0 +1,54 @@
+1) We first need to prepare a new sdcard. We do this by burning an image onto the card. Use the application named Etcher to create a new sd card. Currently using this image: https://debian.beagleboard.org/images/bone-debian-9.2-iot-armhf-2017-10-10-4gb.img.xz
+
+Etcher can be found here: https://etcher.io/
+
+
+2) Insert the new burned SD Card into a new Beagle Bone Black Wireless and connect the BBBW to your computer via USB cable
+
+3) If the image was burned correctly, you will see a drive names BEAGLEBONE appear on your desktop. 
+
+4) Open up a terminal and type the following:
+
+ssh debian@192.168.7.2
+debian@beaglebone:~$ sudo su
+
+default password is: temppwd
+
+5) Set up internet access (skip if you :
+
+Setup Wifi Connection:
+To Set Wifi
+sudo connmanctl
+connmanctl> enable wifi
+connmanctl> scan wifi
+connmanctl> services
+.....
+Highway 1 wifi_.....
+.....
+connmanctl> agent on
+connmanctl> connect wifi_....
+Passphrase? <Enter password>
+connmanctl> quit
+To check IP address
+sudo ifconfig -a
+
+6) Enable UART 1
+
+sudo apt-get update ; sudo apt-get install git-core 
+
+git clone https://github.com/beagleboard/bb.org-overlays 
+cd ./bb.org-overlays 
+
+./dtc-overlay.sh 
+./install.sh 
+
+sudo reboot
+
+
+
+
+
+
+
+
+
