@@ -69,11 +69,11 @@ uboot_overlay_addr0=/lib/firmware/BB-UART1-00A0.dtbo
 
 sudo reboot
 
-9) download the bringup test script:
+9) download the bringup test script from github:
 
 git clone https://github.com/bjtman/hub_bring_up
 
-10) install pytho serial python library:
+10) install python serial library:
 
 sudo pip install pyserial
 
