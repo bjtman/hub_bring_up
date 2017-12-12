@@ -77,3 +77,4 @@ git clone https://github.com/bjtman/hub_bring_up
 
 sudo pip install pyserial
 
+11) From here we can validate the hub node connection. After plugging in the RJ 45 communication cable from hub to node, the node should be powered correctly. This can be validated by watching its three led's blink in succession. Next, run the node_comm_test.py script to send a message requestion the node state. if successful, the hub should receive a data payload bac, which is printed to the terminal. After this the node should take another reading, which is indicated by the LED's blinking in succession again. 
