@@ -25,8 +25,7 @@ sudo connmanctl
 
 connmanctl> enable wifi
 
-connmanctl> scan wif
-i
+connmanctl> scan wifi
 connmanctl> services
 .....
 Highway 1 wifi_.....
@@ -78,5 +77,11 @@ git clone https://github.com/bjtman/hub_bring_up
 10) install python serial library:
 
 sudo pip install pyserial
+
+11) install adafruit libraries for python
+
+sudo apt-get update
+
+sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus -y
 
 11) From here we can validate the hub node connection. After plugging in the RJ 45 communication cable from hub to node, the node should be powered correctly. This can be validated by watching its three led's blink in succession. Next, run the node_comm_test.py script to send a message thats requests the node state. if successful, the hub should receive a data payload back, which is printed to the terminal. After this the node should take another reading, which is indicated by the LED's blinking in succession again.
