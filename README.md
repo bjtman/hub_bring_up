@@ -1,4 +1,4 @@
-These steps are the essential steps to get a beagle bone talking with a node using the bring up script node_comm_test.py. This script is intended to validate the wiring of the cape by sending and receiving RS485 message to and from a connected node. 
+These steps are the essential steps to get a beagle bone talking with a node using the bring up script node_comm_test.py. This script is intended to validate the wiring of the cape by sending and receiving a RS485 message to and from a connected node.
 
 
 1) We first need to prepare a new sdcard. We do this by burning an image onto the sd card. Use the application named Etcher.io to create a new sd card. Currently using this image: https://debian.beagleboard.org/images/bone-debian-9.2-iot-armhf-2017-10-10-4gb.img.xz
@@ -22,17 +22,25 @@ default password is: temppwd
 Setup Wifi Connection:
 To Set Wifi
 sudo connmanctl
+
 connmanctl> enable wifi
-connmanctl> scan wifi
+
+connmanctl> scan wif
+i
 connmanctl> services
 .....
 Highway 1 wifi_.....
 .....
 connmanctl> agent on
+
 connmanctl> connect wifi_....
+
 Passphrase? <Enter password>
+
 connmanctl> quit
+
 To check IP address
+
 sudo ifconfig -a
 
 6) Enable UART 1 with these commands:
@@ -61,7 +69,7 @@ uboot_overlay_addr0=/lib/firmware/BB-UART1-00A0.dtbo
 
 sudo reboot
 
-9) download the bringup tes script:
+9) download the bringup test script:
 
 git clone https://github.com/bjtman/hub_bring_up
 
